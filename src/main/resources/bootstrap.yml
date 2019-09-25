@@ -1,0 +1,23 @@
+#Server port
+server:
+  port: 8888
+
+#Git repo location.
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/price-config-repo
+
+        git:
+          skipSslValidation:  true
+
+
+
+#Disable security of the Management endpoint
+management:
+  security:
+    enabled:  false
