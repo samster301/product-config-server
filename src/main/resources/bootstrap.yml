@@ -10,7 +10,7 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/price-config-repo
+          search-locations: classpath:/
 
         git:
           skipSslValidation:  true
