@@ -4,6 +4,8 @@ server:
 
 #Git repo location.
 spring:
+  application:
+    name: configuration-server
   profiles:
     active: native
   cloud:
@@ -15,7 +17,13 @@ spring:
         git:
           skipSslValidation:  true
 
-
+#Eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka
+    healthcheck:
+      enabled: true
 
 #Disable security of the Management endpoint
 management:

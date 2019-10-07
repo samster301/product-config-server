@@ -1,0 +1,31 @@
+server:
+  port: 2024
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka
+    healthcheck:
+      enabled: true
+
+zuul:
+  ignored-services: '*'
+
+#promotions-service
+  routes:
+    promotions:
+      path: /products/**/promotions/**
+      serviceId:  promotion-service
+      strip-prefix: false
+
+#price-service
+    price:
+      path: /products/price/**
+      serviceId:  price-service
+      strip-prefix: false
+
+#inventory-service
+    inventory:
+      path: /products/inventory/**
+      serviceId:  product-inventory-service
+      strip-prefix: false
