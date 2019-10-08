@@ -11,8 +11,14 @@ eureka:
 zuul:
   ignored-services: '*'
 
-#promotions-service
+#product-service
   routes:
+    info:
+      path: /products/info/**
+      serviceId: product-service
+      strip-prefix: false
+
+#promotions-service
     promotions:
       path: /products/**/promotions/**
       serviceId:  promotion-service
